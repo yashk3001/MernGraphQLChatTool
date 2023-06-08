@@ -1,0 +1,16 @@
+version: "3.8"
+services:
+  chat_client:
+    container_name: chat_client
+    image: chat_client_image
+    stdin_open: true
+    tty: true
+    build: ./client
+    ports:
+      - "3000:3000"
+  chat_server:
+    container_name: chat_server
+    image: chat_server_image
+    build: ./server
+    ports:
+      - "4000:4000"
